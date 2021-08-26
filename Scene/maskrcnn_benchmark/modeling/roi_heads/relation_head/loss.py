@@ -38,7 +38,7 @@ class RelationLossComputation(object):
         self.attribute_sampling = attribute_sampling
         self.attribute_bgfg_ratio = attribute_bgfg_ratio
         self.use_label_smoothing = use_label_smoothing
-        self.pred_weight = (1.0 / torch.FloatTensor([0.5,] + predicate_proportion)).cuda()
+        self.pred_weight = (1.0 / torch.FloatTensor([0.5,] + predicate_proportion))
 
         if self.use_label_smoothing:
             self.criterion_loss = Label_Smoothing_Regression(e=0.01)
